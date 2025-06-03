@@ -1,0 +1,311 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* My Css */
+:root {
+  --banner-background-color: #2e323f;
+  --background-color: #3b4050;
+  --text-on-background-color: #6f737f;
+  --secondary-color: #a59678;
+}
+
+a,
+h1,
+h2,
+h3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.upper-cased {
+  text-transform: uppercase;
+}
+
+.colored {
+  color: #a59678;
+}
+
+.link-styled {
+  background-color: var(--secondary-color);
+  margin: 0 auto;
+  border-radius: 100px;
+  padding: 0.25em 1em;
+}
+
+.container {
+  width: min(1200px, 80%);
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.nav {
+  background-color: var(--banner-background-color);
+}
+
+.nav__content {
+  text-align: center;
+}
+
+.nav__icon {
+  margin: 0 auto;
+  padding: 1.8em;
+}
+
+ul + ul {
+  padding: 1em;
+}
+
+.nav__list-item {
+  padding: 0.25em 0;
+}
+
+.nav__link {
+  color: var(--text-on-background-color);
+  font-size: 1.125;
+}
+
+.hero-container {
+  background-color: var(--background-color);
+  color: white;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 4.625rem;
+}
+
+.hero__text {
+  font-size: 1.5rem;
+  padding: 1em;
+}
+
+.hero__link {
+    font-size: 1.5rem;
+}
+
+.section-one {
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+}
+
+.section-one__text {
+    padding: 1em;
+}
+
+.section-one__text > h2 {
+  font-size: 1.875rem;
+}
+
+.section-one__text > p {
+  font-size: 1.125rem;
+}
+
+.section-two__primary-text-container {
+    padding: 1em 0;
+}
+
+.section-two__primary-text-container > * {
+    padding: 0.5em 0;
+}
+
+.section-two__primary-text-container > h2 {
+  font-size: 2.25rem;
+}
+
+.section-two__primary-text-container > p {
+  font-size: 1.3125rem;
+}
+
+.section-two__secondary-text-container {
+    text-align: center;
+    padding: 1em 0;
+}
+
+.section-two__secondary-text {
+    background-color: var(--background-color);
+    color: white;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.section-two__secondary-text > h2 {
+  font-size: 1.725rem;
+}
+
+.section-two__secondary-text > p {
+    padding: 0.5em 0;
+    font-size: 1.125rem;
+}
+
+.footer {
+    background-color: var(--background-color);
+}
+
+.footer__title {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.footer__text-container {
+  color: white;
+  padding: 1em 0;
+}
+
+.footer__text {
+  padding: 1em 0;
+}
+
+.footer__text li {
+  margin: 0.5em;
+}
+
+.footer__text h3 {
+  font-weight: 1.3125rem;
+}
+
+.footer__text a {
+  color: white;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: "Monserrat", sans-serif;
+}
+
+@media (min-width: 650px) {
+  .nav__content, 
+  .nav__list,
+  .nav__list--primary,
+  .nav__list--secondary {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    gap: 1em;
+  }
+
+  .nav__icon {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nav__content {
+    justify-content: space-between;
+  }
+
+  .section-one__text-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
+  
+  .section-two__secondary-text-container {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__text-container {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 1em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__content {
+    display: grid;
+    text-align: start;
+    align-items: center;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1em;
+    padding: 2em 0;
+    min-height: 600px;
+  }
+
+  .hero__link {
+    margin-left: 1em;
+  }
+
+  .section-two__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4em;
+  }
+
+  .section-two__secondary-text-container {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
